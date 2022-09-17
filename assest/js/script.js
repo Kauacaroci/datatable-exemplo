@@ -8,11 +8,14 @@ $(document).ready( function () {
  } ); 
 
 //  função q add users
-const addUser = ()=>{
+const addUser = () =>{
 
     // Captura todo o formulario e criar  um formData
-    let form = new FormData($('#form-usuarios')[0]);
+    let dados = new FormData($('#form-usuarios')[0]);
 
-    const result = fetch('backend/addUser.php')
+    const result = fetch('backend/addUser.php',{
+        method: 'POST',
+        body: dados
+    })
 
 }
